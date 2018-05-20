@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<!-- Example usage: --generic=socket,out,30,127.0.0.1,5507,udp,C172_truth-->
+
+<PropertyList>
+
+  <generic>
+
+    <output>
+      
+      <binary_mode>true</binary_mode>
+
+      <!-- Time -->
+      <chunk>
+        <name>time (s)</name>
+        <type>float</type>
+        <format>%.4f</format>
+        <node>/sim/time/elapsed-sec</node>
+      </chunk>
+
+      <!-- Position -->
+      <chunk>
+        <name>latitude (rad)</name>
+        <type>double</type>
+        <format>%.12f</format>
+        <node>/position/latitude-deg</node>
+        <factor>0.01745329251994329576</factor>  <!-- degrees to radians -->
+      </chunk>
+
+      <chunk>
+        <name>longitude (rad)</name>
+        <type>double</type>
+        <format>%.12f</format>
+        <node>/position/longitude-deg</node>
+        <factor>0.01745329251994329576</factor>  <!-- degrees to radians -->
+      </chunk>
+
+      <chunk>
+        <name>altitiude (m)</name>
+        <type>double</type>
+        <format>%.3f</format>
+        <node>/position/altitude-ft</node>
+        <factor>0.3048</factor>  <!-- feet to meter -->
+      </chunk>
+
+      <!-- Velocity (NED) -->
+      <chunk>
+        <name>velocity north (m/s)</name>
+        <type>float</type>
+        <format>%.8f</format>
+        <node>/velocities/speed-north-fps</node>
+        <factor>0.3048</factor> <!-- fts to mps -->
+      </chunk>
+
+      <chunk>
+        <name>velocity east (m/s)</name>
+        <type>float</type>
+        <format>%.8f</format>
+        <node>/velocities/speed-east-fps</node>
+        <factor>0.3048</factor> <!-- fps to mps -->
+      </chunk>
+
+      <chunk>
+        <name>velocity down (m/s)</name>
+        <type>float</type>
+        <format>%.8f</format>
+        <node>/velocities/speed-down-fps</node>
+        <factor>0.3048</factor>  <!-- fps to mps -->
+      </chunk>
+
+      <!-- Attitude -->
+      <chunk>
+        <name>yaw (rad)</name>
+        <type>float</type>
+        <format>%.5f</format>
+        <node>/orientation/heading-deg</node>
+        <factor>0.01745329251994329576</factor>  <!-- degrees to radians -->
+      </chunk>
+
+      <chunk>
+        <name>pitch (rad)</name>
+        <type>float</type>
+        <format>%.5f</format>
+        <node>/orientation/pitch-deg</node>
+        <factor>0.01745329251994329576</factor>  <!-- degrees to radians -->
+      </chunk>
+      
+      <chunk>
+        <name>roll (rad)</name>
+        <type>float</type>
+        <format>%.5f</format>
+        <node>/orientation/roll-deg</node>
+        <factor>0.01745329251994329576</factor>  <!-- degrees to radians -->
+      </chunk>
+
+    </output>
+      
+ </generic>
+
+</PropertyList>
